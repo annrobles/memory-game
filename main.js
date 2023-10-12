@@ -13,7 +13,7 @@
 	function startGame() {
 		secondsElapsed = 0;
 		matchedPairs = 0;
-		document.getElementById("timer").textContent = "0";
+		document.getElementById("timer").textContent = "0 secs";
 
 		timer = setInterval(updateTimer, 1000);
 
@@ -26,7 +26,7 @@
 
 	function updateTimer() {
 		secondsElapsed++;
-		document.getElementById("timer").textContent = secondsElapsed;
+		document.getElementById("timer").textContent = `${secondsElapsed} secs`;
 	}
 
 	function stopTimer() {
@@ -39,8 +39,7 @@
 				return a.tries - b.tries;
 			}
 		});
-		console.log("leaderboard ", leaderboard);
-		// Clear previous data
+
 		tableBody.innerHTML = "";
 
 		// Populate the table with sorted leaderboard data
